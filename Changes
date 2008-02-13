@@ -1,6 +1,10 @@
+0.14 Wednesday 13th February, 2008
+	Set $0 to be $file, this allows the use of FindBin in your
+	Makefile.PL (if you're so inclined)
+
 0.13 Tuesday 26th June, 2007
-    File::chdir 0.08 changed its behaviour and is not backwards
-    compatible - avoid using it.
+	File::chdir 0.08 changed its behaviour and is not backwards
+	compatible - avoid using it.
 
 0.12 Thursday 1st March, 2007
 	Implement a y_n for the Module::Build fakery

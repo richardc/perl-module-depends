@@ -21,3 +21,4 @@ t/module-install/Makefile.PL
 t/template-extract/Build.PL
 t/template-extract/META.yml
 t/template-extract/Makefile.PL
+t/uses-findbin/Makefile.PL
