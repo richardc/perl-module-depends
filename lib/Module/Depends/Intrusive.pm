@@ -80,6 +80,7 @@ sub _find_modules {
         package main;
         no strict;
         no warnings;
+	local $0 = $file;
         require "$file";
     };
     $self->error( $@ ) if $@;

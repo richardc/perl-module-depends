@@ -1,7 +1,7 @@
 #!perl
 use strict;
 use warnings;
-use Test::More tests => 17;
+use Test::More tests => 18;
 my $class = 'Module::Depends::Intrusive';
 require_ok("Module::Depends");
 require_ok($class);
@@ -101,3 +101,9 @@ is_deeply(
     "Template::Extract Module::Install requires"
 );
 
+my $findbin = $class->new->dist_dir('t/uses-findbin')->find_modules;
+is_deeply(
+    $findbin->requires,
+    { 'Not::A::Real::Module' => 42 },
+    "odd outcome use of FindBin"
+);
