@@ -1,7 +1,7 @@
 #!perl
 use strict;
 use warnings;
-use Test::More tests => 18;
+use Test::More tests => 19;
 my $class = 'Module::Depends::Intrusive';
 require_ok("Module::Depends");
 require_ok($class);
@@ -107,3 +107,9 @@ is_deeply(
     { 'Not::A::Real::Module' => 42 },
     "odd outcome use of FindBin"
 );
+
+my $mm_false = $class->new->dist_dir('t/makemaker-false')->find_modules;
+is( $mm_false->error, '',
+    "Makefile.PL exiting false should not be considered an error",
+);
+

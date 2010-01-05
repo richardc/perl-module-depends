@@ -81,7 +81,7 @@ sub _find_modules {
         no strict;
         no warnings;
 	local $0 = $file;
-        require "$file";
+        do "$file";
     };
     $self->error( $@ ) if $@;
     delete $INC{$file};
