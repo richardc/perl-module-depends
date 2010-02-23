@@ -1,6 +1,6 @@
 use strict;
 package Module::Depends;
-use YAML qw( LoadFile );
+use Parse::CPAN::Meta;
 use Cwd qw( getcwd );
 use base qw( Class::Accessor::Chained );
 __PACKAGE__->mk_accessors(qw( dist_dir debug libs requires build_requires error ));
@@ -74,9 +74,9 @@ sub find_modules {
 sub _find_modules {
     my $self = shift;
 
-    my $file = 'META.yml';
-    if (-e $file) {
-        my $meta = LoadFile( $file );
+    my ($file) = grep { -e $_ } qw( MYMETA.yml META.yml );
+    if ($file) {
+        my $meta = ( Parse::CPAN::Meta::LoadFile( $file ) )[0];
         $self->requires( $meta->{requires} );
         $self->build_requires( $meta->{build_requires} );
     }

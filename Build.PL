@@ -8,8 +8,8 @@ Module::Build->new(
         'Test::More' => 0,
     },
     requires => {
-        'YAML' => 0,
-        'File::Spec'  => 0,
+        'Parse::CPAN::Meta' => 0,
+        'File::Spec'        => 0,
         'Class::Accessor::Chained' => 0,
     },
     create_makefile_pl => 'traditional',

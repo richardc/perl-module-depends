@@ -1,3 +1,7 @@
+HEAD
+	Use Parse::CPAN::Meta rather than YAML to parse the
+	META.yml (Takatoshi Kitano)
+
 0.14 Wednesday 13th February, 2008
 	Set $0 to be $file, this allows the use of FindBin in your
 	Makefile.PL (if you're so inclined)
