@@ -1,4 +1,5 @@
 HEAD
+	Allow Makefile.PL/Build.PL exit non-true (Ryan Niebur)
 	Use Parse::CPAN::Meta rather than YAML to parse the
 	META.yml (Takatoshi Kitano)
 
