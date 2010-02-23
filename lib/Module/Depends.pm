@@ -4,7 +4,7 @@ use Parse::CPAN::Meta;
 use Cwd qw( getcwd );
 use base qw( Class::Accessor::Chained );
 __PACKAGE__->mk_accessors(qw( dist_dir debug libs requires build_requires error ));
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 =head1 NAME
 
@@ -115,7 +115,8 @@ originally by James Duncan and Arthur Bergman.
 
 =head1 COPYRIGHT
 
-Copyright 2004, 2007, 2008 Fotango.  All Rights Reserved.
+Copyright 2010, Richard Clamp.
+Copyright 2004-2008, Fotango.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
