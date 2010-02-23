@@ -17,6 +17,7 @@ t/empty/.exists
 t/build_version/Build.PL
 t/inline-makemaker/Makefile.PL
 t/with-yaml/META.yml
+t/makemaker-false/Makefile.PL
 t/module-install/Makefile.PL
 t/template-extract/Build.PL
 t/template-extract/META.yml

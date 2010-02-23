@@ -1,5 +1,6 @@
 .cvsignore
 \.svn
+\.git
 blib/
 \bCVS\b
 ^Makefile$
