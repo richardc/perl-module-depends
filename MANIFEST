@@ -19,6 +19,7 @@ t/inline-makemaker/Makefile.PL
 t/with-yaml/META.yml
 t/makemaker-false/Makefile.PL
 t/module-install/Makefile.PL
+t/module-install-versioned/Makefile.PL
 t/template-extract/Build.PL
 t/template-extract/META.yml
 t/template-extract/Makefile.PL

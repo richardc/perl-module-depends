@@ -1,6 +1,7 @@
 .cvsignore
 \.svn
 \.git
+\.DS_Store$
 blib/
 \bCVS\b
 ^Makefile$
