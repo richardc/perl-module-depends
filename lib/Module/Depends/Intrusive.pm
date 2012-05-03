@@ -55,9 +55,10 @@ sub _find_modules {
 
     # Module::Install
     local $INC{"inc/Module/Install.pm"} = 1;
+    local $inc::Module::Install::VERSION = 666;
     local @inc::Module::Install::ISA = qw( Exporter );
     local @inc::Module::Install::EXPORT = qw(
-
+      configure_requires
       all_from auto_install AUTOLOAD build_requires check_nmake include
       include_deps installdirs Makefile makemaker_args Meta name no_index
       requires WriteAll clean_files can_cc sign cc_inc_paths cc_files
@@ -73,6 +74,10 @@ sub _find_modules {
     local *inc::Module::Install::build_requires = sub {
         my %deps = (@_ == 1 ? ( $_[0] => 0 ) : @_);
         $self->build_requires->{ $_ } = $deps{ $_ } for keys %deps;
+    };
+    local *inc::Module::Install::configure_requires = sub {
+        my %deps = (@_ == 1 ? ( $_[0] => 0 ) : @_);
+        $self->configure_requires->{ $_ } = $deps{ $_ } for keys %deps;
     };
 
     my $file = File::Spec->catfile( getcwd(), $pl );

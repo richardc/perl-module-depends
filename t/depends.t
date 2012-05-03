@@ -1,7 +1,7 @@
 #!perl
 use strict;
 use warnings;
-use Test::More tests => 19;
+use Test::More tests => 20;
 my $class = 'Module::Depends::Intrusive';
 require_ok("Module::Depends");
 require_ok($class);
@@ -90,6 +90,15 @@ is_deeply(
     { 'perl' => '5.5.3' },
     "Module::Install requires"
 );
+
+my $module_install_versioned = $class->new->dist_dir('t/module-install-versioned')->find_modules;
+is_deeply(
+    $module_install_versioned->configure_requires,
+    { 'ExtUtils::Depends' => 0,
+      'B::Hooks::OP::Check::EntersubForCV' => 0 },
+    "Module::Install explicit version, configure_requires"
+);
+
 
 my $template_extract
     = $class->new->dist_dir('t/template-extract')->find_modules;

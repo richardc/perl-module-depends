@@ -1,3 +1,7 @@
+HEAD
+    Add configure_requires accessor
+    Fake a version for inc::Module::Install
+
 0.15 Tuesday 23rd February, 2010
 	Allow Makefile.PL/Build.PL exit non-true (Ryan Niebur)
 	Use Parse::CPAN::Meta rather than YAML to parse the

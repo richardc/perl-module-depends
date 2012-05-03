@@ -3,7 +3,7 @@ package Module::Depends;
 use Parse::CPAN::Meta;
 use Cwd qw( getcwd );
 use base qw( Class::Accessor::Chained );
-__PACKAGE__->mk_accessors(qw( dist_dir debug libs requires build_requires error ));
+__PACKAGE__->mk_accessors(qw( dist_dir debug libs requires configure_requires build_requires error ));
 our $VERSION = '0.15';
 
 =head1 NAME
@@ -42,6 +42,7 @@ sub new {
         libs           => [],
         requires       => {},
         build_requires => {},
+        configure_requires => {},
         error          => '',
     });
 }
@@ -97,6 +98,11 @@ an array reference of lib lines
 =head2 requires
 
 A reference to a hash enumerating the prerequisite modules for this
+distribution.
+
+=head2 configure_requires
+
+A reference to a hash enumerating the prerequisite modules to configure this
 distribution.
 
 =head2 build_requires
