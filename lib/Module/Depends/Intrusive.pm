@@ -58,7 +58,7 @@ sub _find_modules {
     local $inc::Module::Install::VERSION = 666;
     local @inc::Module::Install::ISA = qw( Exporter );
     local @inc::Module::Install::EXPORT = qw(
-      configure_requires
+      configure_requires repository bugtracker
       all_from auto_install AUTOLOAD build_requires check_nmake include
       include_deps installdirs Makefile makemaker_args Meta name no_index
       requires WriteAll clean_files can_cc sign cc_inc_paths cc_files
