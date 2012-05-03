@@ -1,4 +1,4 @@
-HEAD
+0.16 Thursday 3rd May, 2012
     Add configure_requires accessor
     Fake a version for inc::Module::Install
 

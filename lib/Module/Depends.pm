@@ -4,7 +4,7 @@ use Parse::CPAN::Meta;
 use Cwd qw( getcwd );
 use base qw( Class::Accessor::Chained );
 __PACKAGE__->mk_accessors(qw( dist_dir debug libs requires configure_requires build_requires error ));
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 =head1 NAME
 
