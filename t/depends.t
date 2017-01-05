@@ -44,7 +44,7 @@ like(
 $notthere->dist_dir('t/empty')->find_modules;
 like(
     $notthere->error,
-    qr{^No {Build,Makefile}.PL found },
+    qr{^No \{Build,Makefile\}.PL found },
     "fails on empty dir"
 );
 
