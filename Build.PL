@@ -12,6 +12,11 @@ Module::Build->new(
         'File::Spec'        => 0,
         'Class::Accessor::Chained' => 0,
     },
+    meta_merge => {
+        resources => {
+            repository => 'http://github.com/richardc/perl-module-depends',
+        },
+    },
     create_makefile_pl => 'traditional',
    )
   ->create_build_script;
